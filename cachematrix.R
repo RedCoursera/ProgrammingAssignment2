@@ -1,9 +1,10 @@
-## "Matrix inversion is usually a costly computation, and there may be some benefit to caching the inverse of a matrix rather than compute it repeatedly."
-## (Information in quotes is from the Programming Assignment 2 instructions.)
+## "Matrix inversion is usually a costly computation, and there may be some benefit to caching the inverse of a matrix
+## rather than compute it repeatedly."  (Information in quotes is from the Programming Assignment 2 instructions.)
 ## The functions below provide a way to do this.  Here's an example of the usage of these functions:
 #define a matrix
     #myMatrix <- matrix(1:4,2,2)
-#create an instance of the makeCacheMatrix helper function, which can store the calculated inverse of the matrix passed to the function
+#create an instance of the makeCacheMatrix helper function, which can store the calculated inverse of the matrix
+#passed to the function
     #solveMatrix <- makeCacheMatrix(myMatrix)
 #calculate and cache the inverse of the matrix in solveMatrix
     #cacheSolve(solveMatrix)
@@ -23,7 +24,8 @@ makeCacheMatrix <- function(x = matrix()) {
     
     #To store the matrix on which the matrix inversion will be calculated
     set <- function(y) {
-        #<<- is the deep assignment arrow to create/modify a variable in the parent environment (makeCacheMatrix function instance)
+        #<<- is the deep assignment arrow to create/modify a variable in the parent environment,
+		#which in this case is a makeCacheMatrix function instance
         x <<- y
         #Clear the variable storing the matrix inverse as it will need to be recalculated
         m <<- NULL
@@ -47,7 +49,8 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## "This function computes the inverse of the special "matrix" returned by makeCacheMatrix above. 
-## If the inverse has already been calculated (and the matrix has not changed), then cacheSolve retrieves the inverse from the cache."
+## If the inverse has already been calculated (and the matrix has not changed), then cacheSolve retrieves 
+## the inverse from the cache."
 cacheSolve <- function(x, ...) {
 
     m <- x$getSolve()
